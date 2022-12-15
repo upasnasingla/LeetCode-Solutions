@@ -1,0 +1,16 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+      int Minsofar=10000;
+      int MaxProfit=0;
+      for(int i=0;i<prices.length;i++){
+          if(prices[i]<Minsofar){
+              Minsofar=prices[i];
+          }
+              int price=prices[i]-Minsofar;
+              MaxProfit=Math.max(MaxProfit,price);
+          
+
+      }
+      return MaxProfit;        
+    }
+}
