@@ -1,0 +1,16 @@
+class Solution{
+    public int solve(Node root){
+        if(root==null){
+            return 0;
+        }
+        int lefts=solve(root.left);
+        int rights=solve(root.right);
+        int x=root.data;
+        root.data=lefts+rights;
+        return lefts+rights+x;
+    }
+    public void toSumTree(Node root){
+        solve(root);
+        
+    }
+}
