@@ -1,0 +1,16 @@
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+        HashMap<Integer,Integer>h=new HashMap<>();
+        Integer ans=-9999;
+        for(int i=0;i<nums.length;i++){
+            h.put(nums[i],h.getOrDefault(nums[i],0)+1);
+        }
+        for(HashMap.Entry<Integer,Integer> entry:h.entrySet()){
+            if(entry.getValue()==1){
+               ans=entry.getKey();
+               break;
+            }
+        }
+        return ans;
+    }
+}
